@@ -22,6 +22,12 @@ jobs:
           pip install pyinstaller
           pip install openpyxl
           pip install numpy
+
+      - name: Archive executable
+        uses: actions/upload-artifact@v2
+        with:
+          name: my-executable
+          path: dist/app.exe
         
 
 
