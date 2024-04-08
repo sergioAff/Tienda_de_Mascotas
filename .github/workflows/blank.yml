@@ -19,9 +19,9 @@ jobs:
 
       - name: Install dependencies
         run: 
-          pip3.9 install pyinstaller
-          pip3.9 install openpyxl
-          pip3.9 install numpy
+          pip install pyinstaller
+          pip install openpyxl
+          pip install numpy
         
 
 
