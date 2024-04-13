@@ -24,13 +24,7 @@ class Registro:
         # Título
         self.titulo = Label(self.window, text=f"{self.tipo} Registro {tabla_actual}", fg="black",
                        font=("Comic Sans", 13, "bold"), pady=5).pack()
-        # Logo
-        # self.imagen_registro = Image.open("src/new.png")
-        # self.nueva_imagen = self.imagen_registro.resize((40, 40))
-        # self.render = ImageTk.PhotoImage(self.nueva_imagen)
-        # self.label_imagen = Label(self.window, image=self.render)
-        # self.label_imagen.image = self.render
-        # self.label_imagen.pack(pady=5)
+
 
         # Marco
         self.marco = LabelFrame(self.window, text="Datos", font=("Comic Sans", 10, "bold"))
@@ -359,11 +353,12 @@ class Registro:
     def actualizar_precio(self):
         # Obtener el nombre del producto seleccionado
         nombre_producto = self.entries['id_producto'].get()
+        categoria=self.entries['animal'].get()
 
         # Realizar una consulta a la base de datos para obtener el precio del producto
         with sql.connect(self.archivo) as conn:
             cursor = conn.cursor()
-            cursor.execute("SELECT precio_venta FROM productos WHERE nombre = ?", (nombre_producto,))
+            cursor.execute("SELECT precio_venta FROM productos WHERE nombre = ? and categoria= ?", (nombre_producto,categoria))
             precio_producto = cursor.fetchone()
 
         # Si se encuentra el precio en la base de datos, actualizar el campo de entrada del precio

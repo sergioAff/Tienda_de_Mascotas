@@ -53,8 +53,8 @@ class Second_Screen:
         # Creación del frame para mostrar los datos
         self.frameMostrar = Frame(self.root, bg='#082d44', borderwidth=0, highlightthickness=0)
         self.frameMostrar.place(
-            height=600,
-            width=900,
+            height=500,
+            width=880,
             x=20,
             y=130)
         self.frameMostrar.grid_rowconfigure(0, weight=1)
