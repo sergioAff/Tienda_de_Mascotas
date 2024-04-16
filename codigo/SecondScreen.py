@@ -124,7 +124,7 @@ class Second_Screen:
         # Función genérica para crear botones
         button = Label(
             text=text,
-            font=("Helvetica", 38),
+            font=("Helvetica", 24),
             cursor='hand2',
             bg='#082d44',
             fg='white',
